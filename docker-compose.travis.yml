@@ -3,7 +3,6 @@ version: '2'
 services:
   litmus:
     image: mar10/docker-litmus
-    container_name: "litmus"
     networks:
       - local
     entrypoint: litmus http://wsgidav:8080
