@@ -16,10 +16,10 @@ before_install:
 #    - sudo apt-get install libneon27-dev
 #    - ./install_litmus.sh
      - docker-compose up -d
-     - sleep 30
-     - docker-compose -f docker-compose.travis.yml up -d
+     - docker ps
+     - sleep 16
+     - docker run --network=wsgidav_local --rm -ti mar10/docker-litmus http://wsgidav:8080/ tester secret
 install:
     pip install tox-travis
 script:
-    # tox
-    docker exec wsgidav_litmus_1 litmus http://wsgidav:8080
+    tox

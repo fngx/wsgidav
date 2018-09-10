@@ -5,7 +5,6 @@ services:
     image: mar10/docker-litmus
     networks:
       - local
-    entrypoint: litmus http://wsgidav:8080
 networks:
   local:
     driver: bridge
