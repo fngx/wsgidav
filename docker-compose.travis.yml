@@ -1,0 +1,21 @@
+version: '3.2'
+
+services:
+  wsgidav:
+    build:
+       context: .
+       # TODO: Isolate build dependencies and code in separate layers
+       # Make use of travis caching with docker save/load 
+    image: mar10/wsgidav
+    container_name: "wsgidav"
+    ports:
+      - "8080:8080"
+    networks:
+      - local
+  litmus:
+    image: mar10/docker-litmus
+    networks:
+      - local
+networks:
+  local:
+    driver: bridge
