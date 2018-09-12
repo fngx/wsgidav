@@ -4,10 +4,8 @@ services:
   wsgidav:
     build:
        context: .
-       # TODO: create a base image already containing prebuilt lxml
-       # to make build faster
-       cache_from:
-           - mar10/wsgidav:latest
+       # TODO: Isolate build dependencies from actual code into separate layers
+       # Make use of travis caching with docker save/load 
     image: mar10/wsgidav
     container_name: "wsgidav"
     ports:
