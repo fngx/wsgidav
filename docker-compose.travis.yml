@@ -1,6 +1,19 @@
-version: '2'
+version: '3.2'
 
 services:
+  wsgidav:
+    build:
+       context: .
+       # TODO: create a base image already containing prebuilt lxml
+       # to make build faster
+       cache_from:
+           - mar10/wsgidav:latest
+    image: mar10/wsgidav
+    container_name: "wsgidav"
+    ports:
+      - "8080:8080"
+    networks:
+      - local
   litmus:
     image: mar10/docker-litmus
     networks:
