@@ -1,8 +1,8 @@
 server: "cheroot"
 server_args: {}
 
-host: 192.168.178.44
-# host: 0.0.0.0
+#host: 192.168.178.44
+host: 0.0.0.0
 port: 8080
 
 ssl_certificate: "../wsgidav/server/sample_bogo_server.crt"
